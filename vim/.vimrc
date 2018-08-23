@@ -7,16 +7,22 @@ call vundle#begin()
 " Required plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+
 " Airline plugin
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim'
 let g:airline_theme='dark'
 autocmd VimEnter * AirlineToggleWhitespace
-" Other plugins
+let g:airline_powerline_fonts = 1
+
+" Useful project tree
 Plugin 'scrooloose/nerdtree'
+
 Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'w0rp/ale'
+
+" Syntax checker
+"Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,12 +75,10 @@ endif
 set nrformats-=octal
 
 " Don't use Ex mode, use Q for formatting.
-" Revert with ":unmap Q".
 map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-" Revert with ":iunmap <C-U>".
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine.  By enabling it you
@@ -116,8 +120,5 @@ if has("autocmd")
 endif " has("autocmd")
 
 if has('langmap') && exists('+langremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If set (default), this may break plugins (but it's backward
-  " compatible).
   set nolangremap
 endif
