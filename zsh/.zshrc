@@ -1,5 +1,6 @@
 export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
+export PROMPT_EOL_MARK=""
 
 ZSH_THEME="nreese"
 
@@ -8,6 +9,8 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
   git
+#  You must install zsh-autosuggestions
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -27,3 +30,5 @@ alias cd..="cd .."
 alias RELOAD="source ~/.zshrc"
 alias lla="ls -la"
 alias ls="ls -la --color=auto"
+alias tmux="tmux -2"
+alias neofetch="neofetch --ascii ~/asciiart/tuxfux --ascii_colors 4 0 7"

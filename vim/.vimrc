@@ -36,7 +36,7 @@ set cmdheight=2
 set pastetoggle=<F11>
 set visualbell
 set t_vb=
-
+colorscheme elflord
 " Mappings
 map <C-o> :NERDTreeToggle<CR>
 
