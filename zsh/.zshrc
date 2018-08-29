@@ -9,7 +9,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
   git
-#  You must install zsh-autosuggestions
   zsh-autosuggestions
 )
 
