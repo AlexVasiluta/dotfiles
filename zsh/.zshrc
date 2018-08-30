@@ -1,6 +1,9 @@
 export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
 export PROMPT_EOL_MARK=""
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=10000
 
 ZSH_THEME="nreese"
 
@@ -8,26 +11,34 @@ ZSH_THEME="nreese"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-  git
   zsh-autosuggestions
 )
+# History
+setopt extended_history
 
-source $ZSH/oh-my-zsh.sh
+# Theme
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+setopt auto_cd
+setopt multios
+setopt prompt_subst
 
-# export LANG=en_US.UTF-8
+# source $ZSH/oh-my-zsh.sh
+source $ZSH/lib/completion.zsh
+source $ZSH/lib/git.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/themes/nreese.zsh-theme
 
 # Editor
 export EDITOR="vim"
 
-# SSH
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-
 export PATH=$PATH:$HOME/bin
 
 # Aliases
+alias grep="grep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"
 alias cd..="cd .."
-alias RELOAD="source ~/.zshrc"
-alias lla="ls -la"
+alias reload="source ~/.zshrc"
 alias ls="ls -la --color=auto"
 alias tmux="tmux -2"
 alias neofetch="neofetch --ascii ~/asciiart/tuxfux --ascii_colors 4 0 7"

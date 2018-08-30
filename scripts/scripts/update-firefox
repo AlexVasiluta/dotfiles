@@ -1,0 +1,50 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+	echo "ROOT privilege needed"
+	exit
+fi
+
+case "$1" in
+	-r|--release|release)
+		VERSION=""
+		;;
+	-b|--beta|beta)
+		VERSION="-beta"
+		;;
+	-d|--dev|devedition)
+		VERSION="-devedition"
+		;;
+	-n|--nightly|nightly)
+		VERSION="-nightly"
+		;;
+	-h|--help|help)
+		echo "Usage: $0 [option]"
+		echo "-r, --release, release  installs 'release' edition"
+		echo "-b, --beta, beta        installs 'beta' edition"
+		echo "-n, --nightly, nightly  install 'nightly' edition"
+		echo "-d, --dev, devedition   installs 'developer' edition"
+		echo "-h, --help, help        shows this prompt"
+		exit 1
+		;;
+	*)
+		echo "No edition chosen, defaulting to 'latest'"
+		echo "For more options, type -h"
+		VERSION=""
+		;;
+esac
+
+# Go to /opt/
+cd /opt/
+# Download latest edition
+echo "Downloading new version of edition ${VERSION#-*}"
+wget -q --show-progress -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox$VERSION-latest-ssl&os=linux64&lang=en-US"
+# Delete old version
+echo "Removing old version"
+rm -rf firefox > /dev/null
+# Untar
+echo "Installing new version"
+tar -xvjf firefox.tar.bz2 > /dev/null
+# Cleanup
+echo "Cleaning up"
+rm firefox.tar.bz2 > /dev/null
