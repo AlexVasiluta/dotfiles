@@ -23,11 +23,11 @@ setopt auto_cd
 setopt multios
 setopt prompt_subst
 
-# source $ZSH/oh-my-zsh.sh
-source $ZSH/lib/completion.zsh
-source $ZSH/lib/git.zsh
-source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/custom/themes/nreese.zsh-theme
+source $ZSH/oh-my-zsh.sh
+# source $ZSH/lib/completion.zsh
+# source $ZSH/lib/git.zsh
+# source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $ZSH/custom/themes/nreese.zsh-theme
 
 # Editor
 export EDITOR="vim"
