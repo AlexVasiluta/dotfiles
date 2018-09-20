@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-	echo "ROOT privilege needed"
-	exit
-fi
-
 case "$1" in
 	-r|--release|release)
 		VERSION=""
@@ -34,17 +29,19 @@ case "$1" in
 		;;
 esac
 
+# Ask for root privilleges
+sudo echo -n
 # Go to /opt/
 cd /opt/
 # Download latest edition
 echo "Downloading new version of edition ${VERSION#-*}"
-wget -q --show-progress -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox$VERSION-latest-ssl&os=linux64&lang=en-US"
+sudo wget -q --show-progress -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox$VERSION-latest-ssl&os=linux64&lang=en-US"
 # Delete old version
 echo "Removing old version"
-rm -rf firefox > /dev/null
+sudo rm -rf firefox > /dev/null
 # Untar
 echo "Installing new version"
-tar -xvjf firefox.tar.bz2 > /dev/null
+sudo tar -xvjf firefox.tar.bz2 > /dev/null
 # Cleanup
 echo "Cleaning up"
-rm firefox.tar.bz2 > /dev/null
+sudo rm firefox.tar.bz2 > /dev/null
