@@ -33,12 +33,13 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 # Aliases
 alias grep="grep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"
 alias cd..="cd .."
 alias reload="source ~/.zshrc"
-alias ls="ls -la --color=auto"
+alias ls="ls -la --color=always"
 alias tmux="tmux -2"
 alias neofetch="neofetch --ascii ~/asciiart/tuxfux --ascii_colors 4 0 7"
+alias listup="apt list --upgradable"
