@@ -12,6 +12,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
   zsh-autosuggestions
+  virtualenv
+  virtualenvwrapper
+  pip
 )
 # History
 setopt extended_history
@@ -31,11 +34,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Editor
 export EDITOR="vim"
-
+export VIRTUAL_ENV_DISABLE_PROMPT=
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/opt/java/jre1.8.0_201/bin
+export JAVA_HOME=/opt/java/jre1.8.0_201
 
 # Aliases
+alias songdownload="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
 alias grep="grep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"
 alias cd..="cd .."
 alias reload="source ~/.zshrc"

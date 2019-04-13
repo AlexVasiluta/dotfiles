@@ -14,7 +14,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim'
 let g:airline_theme='dark'
 autocmd VimEnter * AirlineToggleWhitespace
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " Useful project tree
 Plugin 'scrooloose/nerdtree'
