@@ -14,12 +14,10 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim'
 let g:airline_theme='dark'
 autocmd VimEnter * AirlineToggleWhitespace
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
-" Useful project tree
-Plugin 'scrooloose/nerdtree'
 
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 " Syntax checker
 "Plugin 'w0rp/ale'
@@ -99,26 +97,23 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Only do this part when compiled with support for autocommands.
-if has("autocmd")
+"if has("autocmd")
 
   " Put these in an autocmd group, so that you can revert them with:
   " ":augroup vimStartup | au! | augroup END"
-  augroup vimStartup
-    au!
+"  augroup vimStartup
+"    au!
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid, when inside an event handler
     " (happens when dropping a file on gvim) and for a commit message (it's
     " likely a different one than last time).
-    autocmd BufReadPost *
-      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\""
-      \ | endif
+"    autocmd BufReadPost *
+"      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+"      \ |   exe "normal! g`\""
+"      \ | endif
 
-  augroup END
+"  augroup END
 
-endif " has("autocmd")
+"endif " has("autocmd")
 
-if has('langmap') && exists('+langremap')
-  set nolangremap
-endif
