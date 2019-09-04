@@ -5,31 +5,27 @@ export PROMPT_EOL_MARK=""
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=50000
 export SAVEHIST=10000
-ZSH_THEME="agnoster"
-# ZSH_THEME="nreese"
-
 # 'history' command timestamp format
 HIST_STAMPS="yyyy-mm-dd"
+source ~/antigen.zsh
 
-plugins=(
-  zsh-autosuggestions
-#  virtualenv
-#  virtualenvwrapper
-  pip
-  zsh-completions
-)
-# History
-setopt extended_history
+antigen use oh-my-zsh
+#antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen theme agnoster 
+antigen apply
 
 # Theme
-autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-setopt auto_cd
-setopt multios
+#autoload -U colors && colors
+#export LSCOLORS="Gxfxcxdxbxegedabagacad"
+#setopt auto_cd
+#setopt multios
 setopt prompt_subst
 
+#source ~/antigen.zsh
 # kitty + complete setup zsh | source /dev/stdin
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 # source $ZSH/lib/completion.zsh
 # source $ZSH/lib/git.zsh
 # source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
