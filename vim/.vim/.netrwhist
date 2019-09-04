@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/alexv/.node-gyp/12.1.0/include'
-let g:netrw_dirhist_2='/home/alexv/.node-gyp/12.1.0/include/node'
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/alexv/.vim/bundle'
+let g:netrw_dirhist_7='/home/alexv/.vim'
+let g:netrw_dirhist_6='/home/alexv'
+let g:netrw_dirhist_5='/home/alexv/.vim'
+let g:netrw_dirhist_4='/home/alexv/.vim/bundle'
+let g:netrw_dirhist_3='/home/alexv/.vim/bundle/vim-airline'
+let g:netrw_dirhist_2='/home/alexv/.vim/bundle'
+let g:netrw_dirhist_1='/home/alexv/.vim'
