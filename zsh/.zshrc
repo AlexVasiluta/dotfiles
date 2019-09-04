@@ -5,7 +5,6 @@ export PROMPT_EOL_MARK=""
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=50000
 export SAVEHIST=10000
-
 ZSH_THEME="agnoster"
 # ZSH_THEME="nreese"
 
@@ -17,6 +16,7 @@ plugins=(
 #  virtualenv
 #  virtualenvwrapper
   pip
+  zsh-completions
 )
 # History
 setopt extended_history
@@ -28,12 +28,16 @@ setopt auto_cd
 setopt multios
 setopt prompt_subst
 
-kitty + complete setup zsh | source /dev/stdin
+# kitty + complete setup zsh | source /dev/stdin
 source $ZSH/oh-my-zsh.sh
 # source $ZSH/lib/completion.zsh
 # source $ZSH/lib/git.zsh
 # source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $ZSH/custom/themes/nreese.zsh-theme
+
+autoload -U compinit && compinit
+# Fun stuff
+echo -n $(($(date +%Y)+1)) | lolcat -F 1; echo " will be the year of the Linux desktop" | lolcat
 
 # Editor
 export EDITOR="vim"
