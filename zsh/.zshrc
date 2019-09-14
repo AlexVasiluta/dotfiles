@@ -32,15 +32,13 @@ setopt prompt_subst
 # source $ZSH/custom/themes/nreese.zsh-theme
 
 autoload -U compinit && compinit
-# Fun stuff
-echo -n $(($(date +%Y)+1)) | lolcat -F 1; echo " will be the year of the Linux desktop" | lolcat
-
 # Editor
 export EDITOR="vim"
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export GOPATH="$HOME/Projects/go"
 
 # Aliases
 alias songdownload="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
@@ -50,3 +48,5 @@ alias reload="source ~/.zshrc"
 alias ls="ls -la --color=always"
 alias tmux="tmux -2"
 alias listup="apt list --upgradable"
+
+echo -n $(($(date +%Y)+1)) | lolcat -F 1; echo " will be the year of the Linux desktop" | lolcat
