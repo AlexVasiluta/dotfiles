@@ -1,4 +1,3 @@
-#export TERM=xterm-256color
 export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
 export PROMPT_EOL_MARK=""
@@ -8,38 +7,60 @@ export SAVEHIST=10000
 # 'history' command timestamp format
 HIST_STAMPS="yyyy-mm-dd"
 source ~/antigen.zsh
+source ~/.nix-profile/etc/profile.d/nix.sh
 
 antigen use oh-my-zsh
 #antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-#antigen theme agnoster
-antigen theme raindeer44/vero
+
+# Theme messes up if you reload, so i added this safe break
+if [ -z $ALREADYLOADED ]
+then
+	antigen theme ys
+	#antigen theme agnoster
+	#antigen theme raindeer44/vero
+fi
+export ALREADYLOADED=1
+
 antigen apply
 
-# Theme
-#autoload -U colors && colors
-#export LSCOLORS="Gxfxcxdxbxegedabagacad"
-#setopt auto_cd
-#setopt multios
+ix() {
+     local opts
+     local OPTIND
+     [ -f "$HOME/.netrc" ] && opts='-n'
+     while getopts ":hd:i:n:" x; do
+         case $x in
+             h) echo "ix [-d ID] [-i ID] [-n N] [opts]"; return;;
+             d) $echo curl $opts -X DELETE ix.io/$OPTARG; return;;
+             i) opts="$opts -X PUT"; local id="$OPTARG";;
+             n) opts="$opts -F read:1=$OPTARG";;
+         esac
+     done
+	 shift $(($OPTIND - 1))
+	 [ -t 0 ] && {
+         local filename="$1"
+         shift
+         [ "$filename" ] && {
+             curl $opts -F f:1=@"$filename" $* ix.io/$id
+             return
+         }
+         echo "^C to cancel, ^D to send."
+     }
+     curl $opts -F f:1='<-' $* ix.io/$id
+}
+
 setopt prompt_subst
-
-#source ~/antigen.zsh
-# kitty + complete setup zsh | source /dev/stdin
-#source $ZSH/oh-my-zsh.sh
-# source $ZSH/lib/completion.zsh
-# source $ZSH/lib/git.zsh
-# source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $ZSH/custom/themes/nreese.zsh-theme
-
 autoload -U compinit && compinit
-# Editor
-export EDITOR="vim"
+# Exports
+export EDITOR="nvim"
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/TeamSpeak/:$HOME/.local/bin:$HOME/.cargo/bin
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export GOPATH="$HOME/Projects/go"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/share/gems
 
 # Aliases
 alias songdownload="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
@@ -49,5 +70,4 @@ alias reload="source ~/.zshrc"
 alias ls="ls -la --color=always"
 alias tmux="tmux -2"
 alias listup="apt list --upgradable"
-
-echo -n $(($(date +%Y)+1)) | lolcat -F 1; echo " will be the year of the Linux desktop" | lolcat
+alias vim="nvim"

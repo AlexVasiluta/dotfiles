@@ -1,4 +1,4 @@
-DerpyProgrammer's dotfiles
+AlexVasiluta's dotfiles
 ==========================
 
 Usage
