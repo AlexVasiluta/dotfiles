@@ -20,3 +20,4 @@ set scrolloff=3
 set mouse=a
 set cmdheight=2
 set tabstop=4
+set shiftwidth=4

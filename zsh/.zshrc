@@ -17,9 +17,7 @@ antigen bundle zsh-users/zsh-completions
 # Theme messes up if you reload, so i added this safe break
 if [ -z $ALREADYLOADED ]
 then
-	antigen theme jreese
-	#antigen theme ys
-	#antigen theme agnoster
+	antigen theme alexvasiluta/nreese
 	#antigen theme raindeer44/vero
 fi
 export ALREADYLOADED=1
