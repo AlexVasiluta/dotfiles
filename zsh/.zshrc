@@ -55,11 +55,20 @@ autoload -U compinit && compinit
 export EDITOR="nvim"
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$PATH:$HOME/bin:$HOME/TeamSpeak/:$HOME/.local/bin:$HOME/.cargo/bin
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
 export GOPATH="$HOME/Projects/go"
+# Normal PATH
+export PATH=$PATH:$HOME/bin
+# for local binaries and for rust cargos
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
+# for yarn
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+# for go executables
 export PATH=$PATH:$GOPATH/bin
+# for ruby gems
 export PATH=$PATH:/usr/share/gems
+
 
 # Aliases
 alias songdownload="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
