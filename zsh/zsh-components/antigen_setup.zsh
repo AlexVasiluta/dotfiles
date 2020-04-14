@@ -8,7 +8,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 
 
-antigen theme "$HOME/zsh-components/nreese"
+antigen bundle $HOME/zsh-components/nreese 
 #antigen theme raindeer44/vero
 
 antigen apply
