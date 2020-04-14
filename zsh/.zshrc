@@ -8,7 +8,7 @@ export BROWSER=firefox
 # 'history' command timestamp format
 HIST_STAMPS="yyyy-mm-dd"
 
-source ~/zsh-components/antigen_setup.zsh
+source ~/zsh-components/antigen.zsh
 
 source ~/zsh-components/bindings.zsh
 
