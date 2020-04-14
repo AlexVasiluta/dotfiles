@@ -1,0 +1,10 @@
+# Aliases
+alias rm="trash"
+alias songdownload="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
+alias grep="grep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"
+alias cd..="cd .."
+alias reload="source ~/.zshrc"
+alias ls="ls -la --color=always"
+alias tmux="tmux -2"
+alias listup="apt list --upgradable"
+alias vim="nvim"
