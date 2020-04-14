@@ -13,7 +13,8 @@ let g:airline_powerline_fonts = 0
 
 call plug#end()
 
-" colorscheme ron
+colorscheme ron
+
 
 set number
 set scrolloff=3

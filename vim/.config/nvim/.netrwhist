@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/alexv/.config/environment.d'
-let g:netrw_dirhist_4='/home/alexv/.cache/go-build'
-let g:netrw_dirhist_3='/home/alexv/nreese'
-let g:netrw_dirhist_2='/home/alexv'
-let g:netrw_dirhist_1='/home/alexv/nreese'
