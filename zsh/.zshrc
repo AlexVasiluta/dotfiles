@@ -18,3 +18,5 @@ autoload -U compinit && compinit
 source ~/zsh-components/exports.zsh 
 source ~/zsh-components/aliases.zsh
 source ~/zsh-components/ix.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
