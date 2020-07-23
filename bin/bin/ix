@@ -13,10 +13,9 @@ done
 shift $(($OPTIND - 1))
 [ -t 0 ] && {
     filename="$1"
-	echo "Uploading $filename"
 	shift
     [ "$filename" ] && {
-		curl $opts -F f:1=@"$filename" $* "$IXURL"
+		curl $opts -H "Host: w.kilonova.ro" -F f:1=@"$filename" $* "$IXURL"
 		exit
     }
     echo "^C to cancel, ^D to send."

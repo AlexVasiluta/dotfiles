@@ -1,6 +1,8 @@
 # Exports
+
 # export IXURL=http://ix.io/
-export IXURL=https://w.kilonova.ro/
+export LESSCHARSET=utf-8
+export IXURL=https://cdn.kilonova.ro/
 export EDITOR="nvim"
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -24,4 +26,6 @@ export PATH=$PATH:$GOPATH/bin
 # for ruby gems
 export PATH=$PATH:/usr/share/gems
 
-
+# for plan9
+export PLAN9=/usr/local/plan9
+export PATH=$PATH:$PLAN9/bin

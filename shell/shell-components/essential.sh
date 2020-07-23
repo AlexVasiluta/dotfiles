@@ -7,5 +7,14 @@ export SAVEHIST=100000
 export BROWSER=firefox
 # 'history' command timestamp format
 HIST_STAMPS="yyyy-mm-dd"
-setopt prompt_subst
-autoload -U compinit && compinit
+
+case $SHELL in
+	'/bin/zsh')
+		setopt prompt_subst
+		autoload -U compinit && compinit
+		export PS1="[%n@%m %~]$ "
+		;;
+	*)
+		export PS1="[\u@\h \w]$ "
+		;;
+esac
