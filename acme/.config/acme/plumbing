@@ -1,0 +1,3 @@
+# to update: `cat ~/.config/acme/plumbing | 9 9p write plumb/rules`
+
+editor = acme

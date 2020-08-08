@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+export tabstop=2
+export TERM=dumb
+export PAGER=nobs
+export BROWSER=firefox
+
+if [ ! "$(pgrep plumber)" ]; then
+	9 plumber && echo "started plumber"
+
+	cat ~/.config/acme/plumbing "$PLAN9/plumb/basic" | 9 9p write plumb/rules
+fi
+
+#if [ ! "$(pgrep fontsrv)" ]; then
+#	9 fontsrv -m /mnt/font &
+#fi
+
+#9 acme -a -f /mnt/font/GoRegular/11a/font $@ &
+9 acme -a $@ &
+disown
