@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir -p $HOME/Fisiere
+sudo mount -t cifs //vsynnas.local/Fisiere $HOME/Fisiere -o credentials=$HOME/creds.txt,rw,vers=2.0,uid=1000
+

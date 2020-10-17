@@ -2,28 +2,27 @@
 " let &packpath=&runtimepath
 " source ~/.vimrc
 
+set nocompatible
+
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Airline config
 let g:airline_theme='dark'
 autocmd VimEnter * AirlineToggleWhitespace
 let g:airline_powerline_fonts = 0
 
-" Ale config
-" In ~/.vim/vimrc, or somewhere similar.
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['eslint'],
-" \   'golang': ['gopls'],
-" \}
-" Set this variable to 1 to fix files when you save them.
-" let g:ale_fix_on_save = 1
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
+
+filetype plugin indent on
 
 colorscheme ron
 
