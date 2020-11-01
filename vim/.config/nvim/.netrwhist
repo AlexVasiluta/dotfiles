@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/alexv/src/kilonova'
+let g:netrw_dirhist_0='/home/alexv/src/kilonova/web/templ'
 let g:netrw_dirhist_9='/home/alexv/src/webserver/static/vro'
 let g:netrw_dirhist_8='/home/alexv/src/webserver/static'
 let g:netrw_dirhist_7='/home/alexv/src/kilonova/web/assets/src'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_5='/home/alexv/src/kilonova/web/assets/src'
 let g:netrw_dirhist_4='/home/alexv/src/kilonova/web/assets'
 let g:netrw_dirhist_3='/home/alexv/src/kilonova/web/assets/src'
 let g:netrw_dirhist_2='/home/alexv/src/kilonova/web/templ'
-let g:netrw_dirhist_1='/home/alexv/rot/test'
-let g:netrw_dirhist_0='/home/alexv/src/kilonova/kndb_old'
