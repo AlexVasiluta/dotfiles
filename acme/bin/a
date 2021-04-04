@@ -15,6 +15,6 @@ fi
 #	9 fontsrv -m /mnt/font &
 #fi
 
-#9 acme -a -f /mnt/font/GoRegular/11a/font $@ &
-9 acme -a $@ &
+9 acme -a -f /mnt/font/GoRegular/14a/font $@ &
+#9 acme -a $@ &
 disown

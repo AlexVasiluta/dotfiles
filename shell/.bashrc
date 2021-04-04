@@ -2,25 +2,30 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+	if [[ $__bashrc_bench ]]; then
+		TIMEFORMAT="/etc/bashrc: %R"
+		time . "/etc/bashrc"
+		unset TIMEFORMAT
+	else 
+		. "/etc/bashrc"
+	fi
 fi
 
 
 # My Fedora 32 installation lacks some XDG stuff, so I'd like to put it here
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
 
-BASH_CONFIG_PATH=$XDG_CONFIG_HOME/bash
-BASH_DATA_PATH=$XDG_DATA_HOME/bash
-
-export HISTFILE="$BASH_DATA_PATH/history"
-
-mkdir -p $BASH_DATA_PATH
-mkdir -p $BASH_CONFIG_PATH
+BASH_CONFIG_PATH=$HOME/.config/bash
+BASH_DATA_PATH=$HOME/.local/share/bash
 
 for conf in $BASH_CONFIG_PATH/config.d/*.bash; do
-	. $conf
+	if [[ $__bashrc_bench ]]; then
+		TIMEFORMAT="$conf: %R"
+		time . "$conf"
+		unset TIMEFORMAT
+	else 
+		. "$conf"
+	fi
 done
 
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
+

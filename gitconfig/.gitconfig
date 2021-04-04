@@ -1,0 +1,12 @@
+[user]
+	email = alexv@siluta.ro
+	name = Vasiluță Mihai-Alexandru
+	signingkey = 417A886E87C495AD
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[init]
+	defaultBranch = master # pretty crappy that I have to do this
+[pull]
+	rebase = false
