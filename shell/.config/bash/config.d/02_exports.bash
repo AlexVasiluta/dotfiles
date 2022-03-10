@@ -9,6 +9,9 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # normal path stuff
 export PATH=$PATH:/usr/sbin:/usr/local/bin
 
+# local bin path 
+export PATH=$PATH:$HOME/.local/bin
+
 # gopath
 export GOPATH="$HOME/gostuff"
 

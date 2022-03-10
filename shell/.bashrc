@@ -28,4 +28,3 @@ for conf in $BASH_CONFIG_PATH/config.d/*.bash; do
 done
 
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
-

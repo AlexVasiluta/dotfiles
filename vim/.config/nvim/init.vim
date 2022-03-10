@@ -19,9 +19,13 @@ Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
 Plug 'cespare/vim-toml'
 
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
+
+let g:ycm_confirm_extra_conf=0
 
 set undolevels=1000
 set undoreload=10000
@@ -44,3 +48,4 @@ set mouse=a
 set cmdheight=2
 set tabstop=4
 set shiftwidth=4
+
