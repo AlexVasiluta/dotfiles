@@ -10,6 +10,6 @@ echo "Cloning plan9port..."
 git clone https://github.com/9fans/plan9port $PLAN9
 
 echo "Compiling plan9port..."
-cd $PLAN9; ./INSTALL
-
+cd $PLAN9
+./INSTALL
 

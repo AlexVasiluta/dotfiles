@@ -13,6 +13,5 @@ git clone https://go.googlesource.com/go ~/src/go
 echo "Building Go..."
 cd ~/src/go/src
 ./make.bash
-cd $OLDPWD 
 
 echo "Done!"
