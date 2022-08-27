@@ -29,6 +29,8 @@ export PATH=$PATH:/usr/share/gems
 export PLAN9=/usr/local/plan9
 export PATH=$PATH:$PLAN9/bin
 
+# for rust
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 
 # ~/ Cleanup
