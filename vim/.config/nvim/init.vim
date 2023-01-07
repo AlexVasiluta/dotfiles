@@ -40,7 +40,7 @@ autocmd BufNewFile,BufRead *.templ set ft=html
 syntax enable
 filetype plugin indent on
 
-colorscheme ron
+" colorscheme ron
 
 set number
 set scrolloff=3

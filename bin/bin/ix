@@ -4,11 +4,9 @@
     filename="$1"
 	shift
     [ "$filename" ] && {
-		curl $opts -F f:1=@"$filename" $* "$IXURL"
+		curl $opts -F pwd=$IXPWD -F f:1=@"$filename" $* "$IXURL"
 		exit
     }
     echo "^C to cancel, ^D to send."
 }
-curl $opts -F f:1='<-' $* "$IXURL"
-
-
+curl $opts -F pwd=$IXPWD -F f:1='<-' $* "$IXURL"
