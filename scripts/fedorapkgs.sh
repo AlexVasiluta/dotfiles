@@ -23,4 +23,9 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 # (I'm not 100% sure but these are used by firefox)
 sudo dnf groupupdate sound-and-video
 
+
+# Add mesa support for h264/h265
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+
 echo "Don't forget to stow what you want!"

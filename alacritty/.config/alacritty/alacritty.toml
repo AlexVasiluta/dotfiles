@@ -1,0 +1,58 @@
+#tabspaces = 4
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#686868"
+blue = "#5454ff"
+cyan = "#54ffff"
+green = "#54ff54"
+magenta = "#ff54ff"
+red = "#ff5454"
+white = "#ffffff"
+yellow = "#ffff54"
+
+[colors.dim]
+black = "#181818"
+blue = "#000065"
+cyan = "#18b2b2"
+green = "#006500"
+magenta = "#5f055f"
+red = "#650000"
+white = "#656565"
+yellow = "#ffffaa"
+
+[colors.normal]
+black = "#000000"
+blue = "#1818b2"
+cyan = "#18b2b2"
+green = "#18b218"
+magenta = "#b218b2"
+red = "#b21818"
+white = "#b2b2b2"
+yellow = "#bdbd00"
+
+[colors.primary]
+background = "#000000"
+#bright_background = "#000000"
+bright_foreground = "#ffffff"
+#dim_background = "#000000"
+dim_foreground = "#ffffff"
+foreground = "#ffffff"
+
+[cursor.style]
+blinking = "On"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.0
+
+[scrolling]
+history = 10000
+
+[window.dimensions]
+columns = 100
+lines = 30
