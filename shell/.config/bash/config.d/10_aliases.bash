@@ -1,5 +1,9 @@
 # Aliases
-alias rm="trash"
+
+command -v trash >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+	alias rm="trash"
+fi
 
 alias grep="grep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"
 alias egrep="egrep --color=auto --exclude-dir={.cvs,.git,.vcs,.hs}"

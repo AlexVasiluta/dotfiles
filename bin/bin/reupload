@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# This script downloads the file from URL $1 and uploads it as $2
-
-wget $1 -O /tmp/$2
-ix /tmp/$2
