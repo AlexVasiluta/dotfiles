@@ -8,11 +8,16 @@
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
-# Restart your shell for the changes to take effect.
+command -v pyenv >/dev/null 2>&1
+if [ $? -eq 0]; then
+	eval "$(pyenv init -)"
 
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
+	# Restart your shell for the changes to take effect.
 
-eval "$(pyenv virtualenv-init -)"
+	# Load pyenv-virtualenv automatically by adding
+	# the following to ~/.bashrc:
+
+	eval "$(pyenv virtualenv-init -)"
+fi
+
